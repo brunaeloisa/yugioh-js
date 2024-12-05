@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yu-gi-oh game</title>
+  <title>Yu-Gi-Oh! Jokenpo Edition</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +26,58 @@
 </head>
 
 <body>
+  <audio id="bg-music" loop>
+    <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="bg-video">
+    <video loop muted autoplay>
+      <source src="./src/assets/video/yugi.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="container">
+    <section class="container-left framed-golden-2">
+      <button id="music-button">🔇</button>
+      <div class="score-box frame">
+        <span id="score-points">Win: 0 - Lose: 0</span>
+      </div>
+      <div class="avatar">
+        <img id="card-img" height="228px">
+      </div>
+      <div class="card-info frame">
+        <p id="card-name">Select</p>
+        <p id="card-type">card</p>
+      </div>
+    </section>
+
+    <section class="container-right">
+      <div class="card-box-container">
+        <div id="computer-cards" class="card-box framed"></div>
+
+        <div class="card-versus-container">
+          
+          <div class="versus-top">
+            <div class="card-infield">
+              <img id="player-field-card" height="180px" width="125px">
+            </div>
+            <img src="./src/assets/icons/millenium2.png" height="100px">
+            <div class="card-infield">
+              <img id="computer-field-card" height="180px" width="125px">
+            </div>
+          </div>
+
+          <div class="versus-bottom">
+            <button id="next-duel" class="rpgui-button">Ganhou</button>
+          </div>
+        </div>
+
+        <div id="player-cards" class="card-box framed"></div>
+      </div>
+    </section>
+  </div>
   
-  <script src="./src/scripts/engine.js" defer></script>
+  <script src="./src/scripts/engine.js" type="module" defer></script>
 </body>
 
 </html>
